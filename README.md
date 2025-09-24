@@ -43,8 +43,10 @@ If each API call takes \~1s:
 - Shows the **power of asyncio + httpx** compared to blocking `requests`.
 
 ### Results:
-
+Async:
 ![alt text](images/async.png)
+
+Sync:
 ![alt text](images/sync.png)
 
 > [!NOTE]
