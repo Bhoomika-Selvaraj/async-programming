@@ -6,12 +6,17 @@ WEATHER_API_KEY = os.getenv("weather_api_key")
 
 
 async def fetch(city):
-    async with httpx.AsyncClient() as client:
-        resp = await client.get(
-            f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={WEATHER_API_KEY}"
-        )
-    response = resp.json()
-    return response["main"]["temp"]
+    async with httpx.AsyncClient(
+        timeout=2
+    ) as client:  # Built-in timeout for httpx calls!
+        try:
+            resp = await client.get(
+                f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={WEATHER_API_KEY}"
+            )
+            response = resp.json()
+            return response["main"]["temp"]
+        except httpx.ReadTimeout:
+            return "Timed out!"
 
 
 async def main(cities: str):
