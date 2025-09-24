@@ -44,8 +44,8 @@ If each API call takes \~1s:
 
 ### Results:
 
-![alt text](async.png)
-![alt text](sync.png)
+![alt text](images/async.png)
+![alt text](images/sync.png)
 
 > [!NOTE]
 > Opportunities don't happen, you create them :facepunch: - `Chris Grosser`
