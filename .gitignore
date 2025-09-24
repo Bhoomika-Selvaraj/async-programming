@@ -1,0 +1,7 @@
+# Python-generated files
+__pycache__/
+wheels/
+
+# Virtual environments
+.venv
+.env
